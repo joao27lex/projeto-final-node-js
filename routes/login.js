@@ -26,7 +26,7 @@ router.post('/', function(req, res, next){
         vusuario._foto = vdados.avatar_path;
         vusuario._carta = vdados.carta;
         
-        res.render('carta',{title: `Usuário ID ${vdados.id} =)`, dados: vusuario});
+        res.render('carta',{title: `Usuário ${vdados.name}`, dados: vusuario});
       }
 
       else{

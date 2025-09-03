@@ -1,12 +1,11 @@
 extends layout
 
-head 
-  title= title
-  link(rel='stylesheet', href='/stylesheets/style.css')
+block content
+  h1= title
 
-body
-  block content
-    h1= title
-    img(src=`/images/${dados._foto}`, alt="Foto do usuário")
-    p = dados._nome
-    p = dados._carta
+  if dados && dados._foto
+    img(src=`/images/${dados._foto}`, alt="Foto do usuário", style="max-width:240px")
+
+  p Nome: #{dados._nome}
+  h3 Sua carta
+  p= dados._carta

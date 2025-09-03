@@ -32,7 +32,7 @@ router.post('/', upload.single('foto'), async function(req, res, next) {
         let vcaminho = req.file.originalname;
         let vcarta = req.body.mensagem;
 
-        let vsenhasecreta = await criptografia.gerarHash(vsenha);
+        let vsenhasecreta = await criptografia.senhaHash(vsenha);
 
         bd.none('INSERT INTO usuarios (name, email, password_hash, avatar_path, carta) VALUES ($1, $2, $3, $4, $5)', [vnome, vemail, vsenhasecreta, vcaminho, vcarta])
         .then(() => {
