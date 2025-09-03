@@ -34,7 +34,7 @@ router.post('/', upload.single('foto'), async function(req, res, next) {
 
         let vsenhasecreta = await criptografia.gerarHash(vsenha);
 
-        bd.none('INSERT INTO usuarios (name, email, passwordHash, avatar_path, carta) VALUES ($1, $2, $3, $4, $5)', [vnome, vemail, vsenhasecreta, vcaminho, vcarta])
+        bd.none('INSERT INTO usuarios (name, email, password_hash, avatar_path, carta) VALUES ($1, $2, $3, $4, $5)', [vnome, vemail, vsenhasecreta, vcaminho, vcarta])
         .then(() => {
             res.render('login', { title: 'Login', mensagem: 'Usuário cadastrado com sucesso!' });
         })

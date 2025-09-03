@@ -6,12 +6,12 @@ html
   body
     h1=title 
     if mensagem 
-      p.alert-sucess= mensagem 
+      p.alert.alert-success= mensagem 
 
     if erro 
       p.alert.alert-danger= erro
 
-  form(action="/carta", method="post")
+  form(action="/login", method="post")
     div.form-group
       input.form-control-lg(type="text", name="txtemail", placeholder="Seu email")
     div.form-group

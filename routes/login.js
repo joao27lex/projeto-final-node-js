@@ -13,11 +13,12 @@ router.post('/', function(req, res, next){
     let vusuario = {
       _nome: '',
       _email: '',
-      _foto: ''
+      _foto: '',
+      _carta: ''
     };
     
-    bd.one('SELECT id, name, email, passwordHash, avatar_path, carta FROM usuario WHERE email = $1',[req.body.txtemail]).then(async (vdados) => {
-      let pwdchecked = await criptografia.compararSenhas(req.body.txtsenha, vdados.senha);
+    bd.one('SELECT id, name, email, password_hash, avatar_path, carta FROM usuarios WHERE email = $1',[req.body.txtemail]).then(async (vdados) => {
+      let pwdchecked = await criptografia.compararSenhas(req.body.txtsenha, vdados.password_hash);
       
       if(pwdchecked){
         vusuario._nome = vdados.name;
@@ -25,17 +26,18 @@ router.post('/', function(req, res, next){
         vusuario._foto = vdados.avatar_path;
         vusuario._carta = vdados.carta;
         
-        res.render('dados-cadastro',{title: `Usuário ID ${vdados.id} =)`, dados: vusuario});
+        res.render('carta',{title: `Usuário ID ${vdados.id} =)`, dados: vusuario});
       }
 
-      throw new Error('Erro ao consultar dados.');
+      else{
+        throw new Error('Senha incorreta.');
+      }
     })
     
     .catch(err => {
       res.render('login', { title: 'Login', erro: err.message });
     });
 
-    
   }
   
   catch(erro){
