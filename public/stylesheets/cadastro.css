@@ -1,0 +1,115 @@
+/* cadastro.css */
+
+/* layout base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  padding: 24px;
+}
+
+/* container para garantir centralização perfeita e largura máxima */
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* título */
+h1 {
+  margin: 0 0 18px 0;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #f5f7fb;
+}
+
+/* card do form */
+form {
+  background: rgba(7, 12, 24, 0.9);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  width: 100%;
+}
+
+/* grupos */
+.form-group { margin-bottom: 16px; }
+
+/* campos */
+input.form-control-lg,
+textarea,
+input.form-control-file {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.16);
+  outline: none;
+  margin-top: 6px;
+  background: #ffffff !important;   /* força claro mesmo em dark mode */
+  color: #0f172a;
+}
+
+/* placeholder */
+input::placeholder,
+textarea::placeholder { color: #6b7280; }
+
+/* corrige autofill amarelo do Chrome/Edge */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a;
+}
+
+/* textarea */
+textarea { min-height: 140px; resize: vertical; }
+
+/* botão bonito */
+button.btn.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(180deg, #1683ff 0%, #0b5ed7 100%);
+  box-shadow: 0 8px 18px rgba(11, 94, 215, 0.35);
+  transition: transform .15s ease, filter .15s ease;
+  margin-top: 30px;
+}
+button.btn.btn-primary:hover   { filter: brightness(1.05); transform: translateY(-1px); }
+button.btn.btn-primary:active  { transform: translateY(0);  filter: brightness(0.97); }
+
+/* file input (mantém contraste em dark) */
+input.form-control-file {
+  background: transparent !important;
+  color: #e5e7eb;
+  border: none;
+}
+
+/* centralização do conteúdo da página */
+.main-center {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* limite e centralização do bloco */
+.container {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;          /* garante centralização horizontal */
+}
+
+/* o form ocupa toda a largura do container */
+form { width: 100%; }

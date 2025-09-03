@@ -2,19 +2,17 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/login.css')
   body
-    h1=title 
+    h1= title
     if mensagem 
       p.alert.alert-success= mensagem 
-
     if erro 
       p.alert.alert-danger= erro
 
-  form(action="/login", method="post")
-    div.form-group
-      input.form-control-lg(type="text", name="txtemail", placeholder="Seu email")
-    div.form-group
-      input.form-control-lg(type="text", name="txtsenha", placeholder="Sua senha")
-    button.btn.btn-primary(type="submit") Entrar 
-
+    form(action="/login", method="post")
+      div.form-group
+        input.form-control-lg(type="text", name="txtemail", placeholder="Seu email")
+      div.form-group
+        input.form-control-lg(type="password", name="txtsenha", placeholder="Sua senha")
+      button.btn.btn-primary(type="submit") Entrar

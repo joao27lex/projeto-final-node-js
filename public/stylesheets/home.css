@@ -1,0 +1,46 @@
+/* fundo azul específico da HOME */
+.home-bg{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  
+  /* centralização + card da HOME */
+  .page-center{
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .home-card{
+    width: min(720px, 92vw);
+    background: rgba(7, 12, 24, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 14px 32px rgba(0,0,0,.45);
+    padding: 28px;
+    text-align: center;
+  }
+  
+  .home-card h1{
+    margin: 0 0 20px 0;
+    font-size: 2rem;
+    color: #f5f7fb;
+  }
+  
+  .home-card a{
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #fff;
+    background: #0b5ed7;
+    transition: transform .15s ease, filter .15s ease;
+    box-shadow: 0 8px 18px rgba(11,94,215,.35);
+    margin: 8px 10px;
+  }
+  .home-card a:hover  { transform: translateY(-1px); filter: brightness(1.05); }
+  .home-card a:active { transform: translateY(0);    filter: brightness(.97); }
+  

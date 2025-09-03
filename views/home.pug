@@ -2,11 +2,14 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/home.css')
 
   body
     block content
-      h1 Escreva uma mensagem para o seu futuro 'eu'
-      a(href="/cadastro") Ir para o cadastro
-      br
-      a(href="/login") Ir para o login
+      .home-bg
+        .page-center
+          .home-card
+            h1 Escreva uma mensagem para o seu futuro "eu"
+            a(href="/cadastro") Ir para o cadastro
+            a(href="/login") Ir para o login
+

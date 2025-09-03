@@ -1,0 +1,86 @@
+/* login.css */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+/* <<< SUBSTITUA este bloco >>> */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #f5f7fb;
+
+  /* centraliza o CONJUNTO (título + form) no centro da viewport */
+  display: grid;
+  min-height: 100vh;
+  place-content: center;   /* <-- centra o conteúdo do grid vertical e horizontalmente */
+  justify-items: center;   /* <-- alinha cada item no centro na horizontal */
+  gap: 14px;               /* espaço entre h1 e form */
+  padding: 24px;
+}
+
+
+/* título */
+h1 {
+  margin: 0 0 18px 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #f5f7fb;
+}
+
+/* card do formulário */
+form {
+  width: 500px;
+  background: rgba(7, 12, 24, 0.9);
+  padding: 26px 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* mensagens */
+.alert {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 12px auto;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.alert-success { background: #0f5132; color: #d1f7e3; }
+.alert-danger  { background: #842029; color: #ffe2e6; }
+
+/* grupos e campos */
+.form-group { margin-bottom: 14px; }
+
+input.form-control-lg {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.16);
+  outline: none;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* corrige autofill */
+input.form-control-lg:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a;
+}
+
+/* botão */
+button.btn.btn-primary {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(180deg, #1683ff 0%, #0b5ed7 100%);
+  box-shadow: 0 8px 18px rgba(11, 94, 215, 0.35);
+  transition: transform .15s ease, filter .15s ease;
+}
+button.btn.btn-primary:hover  { filter: brightness(1.05); transform: translateY(-1px); }
+button.btn.btn-primary:active { filter: brightness(.97);  transform: translateY(0); }

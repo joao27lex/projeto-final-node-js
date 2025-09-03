@@ -1,11 +1,21 @@
 doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/carta.css')
+  body
+    .page-center
+      .card
+        .header
+          if dados && dados._foto
+            img.avatar(src=`/images/${dados._foto}`, alt="Foto do usuário")
+          .user-block
+            h1.titulo= title
+            h2.nome #{dados._nome}
+            if dados && dados._data
+              p.meta Criada em #{dados._data}
 
-block content
-  h1= title
-
-  if dados && dados._foto
-    img(src=`/images/${dados._foto}`, alt="Foto do usuário", style="max-width:240px")
-
-  p Nome: #{dados._nome}
-  h3 Sua carta
-  p= dados._carta
+        .letter
+          h3.subtitulo Sua carta
+          .paper
+            pre.carta= dados._carta

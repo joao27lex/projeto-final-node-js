@@ -7,7 +7,7 @@ const bd = require('../conexao_bd');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('cadastro', { title: 'Novo Usuário' });
+  res.render('cadastro', { title: 'Cadastro de Usuário' });
 });
 
 // configuração do multer para salvar arquivos no disco:
