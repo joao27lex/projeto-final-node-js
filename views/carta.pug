@@ -1,0 +1,12 @@
+extends layout
+
+head 
+  title= title
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+body
+  block content
+    h1= title
+    img(src=`images/${dados._foto}`, alt="Foto do usuário")
+    p = dados._nome
+    p = dados.mensagem

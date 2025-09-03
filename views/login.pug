@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1=title 
+    if mensagem 
+      p.alert-sucess= mensagem 
+
+    if erro 
+      p.alert.alert-danger= erro
+
+  form(action="/carta", method="post")
+    div.form-group
+      input.form-control-lg(type="text", name="txtemail", placeholder="Seu email")
+    div.form-group
+      input.form-control-lg(type="text", name="txtsenha", placeholder="Sua senha")
+    button.btn.btn-primary(type="submit") Entrar 
+

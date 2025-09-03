@@ -1,0 +1,12 @@
+extends layout
+
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    block content
+      h1= Escreva uma mensagem para o seu futuro 'eu'
+      a(href="/cadastro") Ir para o cadastro
+      a(href="/login") Ir para o login

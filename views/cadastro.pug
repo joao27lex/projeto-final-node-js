@@ -1,0 +1,27 @@
+extends layout 
+
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    body
+        block content 
+            h1 = title 
+            form(action="/cadastro", method="post", enctype="multipart/form-data") 
+                div.form-group 
+                    input.form-control-lg(type='text', name="txtnome", placeholder="Seu Nome") 
+                
+                div.form-group 
+                    input.form-control-lg(type="text", name="txtemail", placeholder="Seu email") 
+
+                div.form-group  
+                    input.form-control-lg(type="password", name="txtsenha", placeholder="Sua senha") 
+
+                div.form-group 
+                    input.form-control-file.form-control-lg(type="file", name="foto")
+
+                div.form-group
+                    textarea(name="mensagem", rows="4", cols="50", placeholder="Sua mensagem aqui...")  
+
+                button.btn.btn-primary(type="submit") Enviar dados
